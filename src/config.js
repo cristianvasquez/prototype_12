@@ -1,16 +1,22 @@
 import { ItemType } from 'golden-layout'
 
 const HOME = {
-  title: 'Home',
-  componentType: './components/Home.vue',
+  title: 'Hello World',
+  componentType: './components/HelloWorld.vue',
 }
 
 const SETTINGS = {
   title: 'Settings',
-  componentType: './components/Settings.vue',
+  componentType: './components/Settings.js',
 }
 
-const defaultLayout = {
+const GRAPH = {
+  title: 'Graph',
+  componentType: './components/Graph.vue',
+}
+
+
+const baseLayout = {
   root: {
     type: ItemType.row,
     content: [
@@ -20,17 +26,17 @@ const defaultLayout = {
         isClosable: false,
         width: 40,
         componentState: undefined,
-        ...HOME,
+        ...HOME
       },
       {
         type: 'component',
         header: { show: 'top', popout: false },
         width: 40,
         componentState: { abc: 123 },
-        ...SETTINGS,
+        ...SETTINGS
       },
     ],
   },
 }
 
-export { defaultLayout, HOME, SETTINGS }
+export { HOME, SETTINGS, GRAPH, baseLayout }

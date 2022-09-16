@@ -1,18 +1,18 @@
 
 <script setup>
 import { storeToRefs } from 'pinia'
+import { Glayout, useLayoutStore } from 'playground-template'
 import { onMounted } from 'vue'
-import { Glayout,useLayoutStore } from 'playground-template'
-import { SETTINGS, HOME, defaultLayout } from './config.js'
+import { baseLayout, HOME, SETTINGS, GRAPH } from './config.js'
 
 const store = useLayoutStore()
 const { rootLayoutRef } = storeToRefs(store)
 const { addInstance, loadLayout } = store
 
-const components = [HOME, SETTINGS]
+const components = [HOME, SETTINGS, GRAPH]
 
-onMounted(()=>{
-  loadLayout(defaultLayout)
+onMounted(() => {
+  loadLayout(baseLayout)
 })
 
 </script>
@@ -29,7 +29,7 @@ onMounted(()=>{
     </div>
     <glayout
         ref="rootLayoutRef"
-        componentPathPrefix="../"
+        componentPathPrefix="../../../../src/"
         style="width: 100%; height: calc(100% - 90px)"
     ></glayout>
   </div>
