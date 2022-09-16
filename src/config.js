@@ -7,7 +7,7 @@ const HOME = {
 
 const SETTINGS = {
   title: 'Settings',
-  componentType: './components/Settings.js',
+  componentType: './components/Settings.vue',
 }
 
 const GRAPH = {
