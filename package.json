@@ -16,6 +16,7 @@
   "author": "Cristian Vasquez",
   "license": "MIT",
   "dependencies": {
+    "@antv/g6": "^4.7.8",
     "@antv/x6": "^1.34.1",
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@rdfjs-elements/rdf-editor": "^0.5.4",

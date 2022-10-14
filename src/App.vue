@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia'
 import { Glayout, useLayoutStore } from 'playground-template'
 import { onMounted } from 'vue'
 import { HOME, SETTINGS, GRAPH } from './config.js'
-import { contentLayout } from './layouts.js'
+import { minimal } from './layouts.js'
 
 const store = useLayoutStore()
 const { rootLayoutRef } = storeToRefs(store)
@@ -13,7 +13,7 @@ const { addInstance, loadLayoutConfig } = store
 const components = [HOME, SETTINGS, GRAPH]
 
 onMounted(() => {
-  loadLayoutConfig(contentLayout)
+  loadLayoutConfig(minimal)
 })
 
 </script>

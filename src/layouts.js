@@ -1,7 +1,7 @@
 import { ItemType } from 'golden-layout'
 import { HOME, SETTINGS, GRAPH  } from './config.js'
 
-const baseLayout = {
+const minimal = {
   root: {
     type: ItemType.row,
     content: [
@@ -9,17 +9,10 @@ const baseLayout = {
         type: 'component',
         header: { show: 'top' },
         isClosable: false,
-        width: 40,
+        width: 80,
         componentState: undefined,
-        ...HOME
-      },
-      {
-        type: 'component',
-        header: { show: 'top', popout: false },
-        width: 40,
-        componentState: { abc: 123 },
-        ...SETTINGS
-      },
+        ...GRAPH
+      }
     ],
   },
 }
@@ -68,4 +61,4 @@ const contentLayout = {
     ],
   },
 }
-export { baseLayout, contentLayout }
+export { minimal, contentLayout }
