@@ -3,16 +3,17 @@
 import { storeToRefs } from 'pinia'
 import { Glayout, useLayoutStore } from 'playground-template'
 import { onMounted } from 'vue'
-import { baseLayout, HOME, SETTINGS, GRAPH } from './config.js'
+import { HOME, SETTINGS, GRAPH } from './config.js'
+import { contentLayout } from './layouts.js'
 
 const store = useLayoutStore()
 const { rootLayoutRef } = storeToRefs(store)
-const { addInstance, loadLayout } = store
+const { addInstance, loadLayoutConfig } = store
 
 const components = [HOME, SETTINGS, GRAPH]
 
 onMounted(() => {
-  loadLayout(baseLayout)
+  loadLayoutConfig(contentLayout)
 })
 
 </script>
@@ -20,7 +21,7 @@ onMounted(() => {
 <template>
   <div class="full-height">
     <div id="nav">
-      <h1>Playground</h1>
+      <h1>Visual playground</h1>
       <template v-for="component of components">
         <button @click="addInstance(component)">
           {{ component.title }}
@@ -53,5 +54,6 @@ body {
   height: 100%;
 }
 </style>
+
 
 

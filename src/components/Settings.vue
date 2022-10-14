@@ -1,27 +1,24 @@
 <script setup>
-import { baseLayout } from '../config.js'
-import { useLayoutStore } from 'playground-template'
-
-const store = useLayoutStore()
-const { saveCurrentLayout, loadCurrentLayout, loadLayout } = store
+import { NInput, NSpace } from 'naive-ui'
+import { onBeforeMount, onMounted, ref } from 'vue'
+import { baseLayout, contentLayout } from '../layouts.js'
 
 const layouts = [
   { name: 'Default layout', data: baseLayout },
+  { name: 'Content', data: contentLayout },
 ]
 
-function load (index) {
-  loadLayout(layouts[index].data)
-}
+onBeforeMount(() => {
+
+})
 
 </script>
 
 <template>
   <div class="layouts">
-    <button @click="loadCurrentLayout">Load current</button>
-    <button @click="saveCurrentLayout">Save current</button>
-    <template v-for="(item, index) of layouts">
-      <button @click="load(index)">{{ item.name }}</button>
-    </template>
+
+    <div>I'm the settings</div>
+
   </div>
 </template>
 
